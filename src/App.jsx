@@ -1,17 +1,20 @@
-import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider,
-         Navigate } from 'react-router-dom';
+import {
+  createBrowserRouter, createRoutesFromElements, Route, RouterProvider,
+  Navigate
+} from 'react-router-dom';
 import Greenhouse from './components/Greenhouse';
 import Navigation from './components/Navigation';
 import Thermometer from './components/Thermometer';
 import Hygrometer from './components/Hygrometer';
+import ClimateProvider from './context/ClimateContext';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<Navigation />} >
-      <Route path="thermometer" element={<Thermometer />} />
-      <Route path="hygrometer" element={<Hygrometer />} />
-      <Route path="/" element={<Greenhouse />} />
-      <Route path ="*" element={<Navigate to="/" replace />} />
+      <Route path="thermometer" element={<ClimateProvider><Thermometer /></ClimateProvider>} />
+      <Route path="hygrometer" element={<ClimateProvider><Hygrometer /></ClimateProvider>} />
+      <Route path="/" element={<ClimateProvider><Greenhouse /></ClimateProvider>} />
+      <Route path="*" element={<Navigate to="/" replace />} />
     </Route>
   )
 );
