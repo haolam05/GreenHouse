@@ -1,5 +1,9 @@
 # Greenhouse Project
 
+
+![green house](https://github.com/haolam05/GreenHouse/assets/71291057/25b38f1b-6463-4ad4-be93-c45e82ee625b)
+
+
 In this project, you will be creating a frontend application that maintains a
 mock greenhouse. You will display and control the climate of the greenhouse
 using React context. By the end of the project, you should be able to
